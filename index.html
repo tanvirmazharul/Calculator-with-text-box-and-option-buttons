@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with text box and option buttons</title>
+</head>
+<body>
+    
+    
+        <input type="number1" name="number_1" id="number1" >
+        <br>
+        <input type="radio" id="addition" name="operation" value="+">
+        <label for="addition">addition</label><br>
+        <input type="radio" id="sub" name="operation" value="-">
+        <label for="sub">subtraction</label><br>
+        <input type="radio" id="multi" name="operation" value="*">
+        <label for="multi">multiplication</label><br>
+        <input type="radio" id="div" name="operation" value="/">
+        <label for="div">division</label><br>
+        <input type="number"name="number_2" id="number2" >
+        <input type="button" value="&equals;" onclick="calculats()">
+        <input type="number" name="results" id="resu">
+
+
+    
+  
+    <script >
+        function calculats()
+        {
+            var num1 ,num2, res;
+            
+            const radioButtons = document.querySelectorAll('input[name="operation"]');
+       
+            let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            
+            switch( selectedSize){
+                case "+" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1+num2;
+                    document.getElementById("resu").value=res;
+                    
+                    break;
+                case "-" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1-num2;
+                    document.getElementById("resu").value=res;
+                    break;
+                case "*" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1*num2;
+                    document.getElementById("resu").value=res;
+                    break;
+                case "/" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1/num2;
+                    document.getElementById("resu").value=res;
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
